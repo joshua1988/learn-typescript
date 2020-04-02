@@ -1,4 +1,7 @@
 // utils
+/**
+ * @param {HTMLElement} selector 
+ */
 function $(selector) {
   return document.querySelector(selector);
 }
@@ -37,10 +40,24 @@ let isDeathLoading = false;
 let isRecoveredLoading = false;
 
 // api
+/**
+ * @typedef {object} summary
+ * @property {string} id
+ * @property {number} age
+ */
+
+/**
+ * @returns {Promise<summary>}
+ */
 function fetchCovidSummary() {
   const url = 'https://api.covid19api.com/summary';
   return axios.get(url);
 }
+
+// async function testDoc() {
+//   const response = await fetchCovidSummary();
+//   response.age;
+// }
 
 function fetchCountryInfo(countryCode, status) {
   // params: confirmed, recovered, deaths
@@ -59,6 +76,10 @@ function initEvents() {
   rankList.addEventListener('click', handleListClick);
 }
 
+/**
+ * 
+ * @param {HTMLElement} event 
+ */
 async function handleListClick(event) {
   let selectedId;
   if (
@@ -97,6 +118,17 @@ async function handleListClick(event) {
   // console.log(data);
 }
 
+/**
+ * 
+ * @typedef {object} DeathListItem
+ * @property {Date} Date
+ * @property {string} name
+ */
+
+/**
+ * 
+ * @param {DeathListItem[]} data 
+ */
 function setDeathsList(data) {
   const sorted = data.sort(
     (a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
