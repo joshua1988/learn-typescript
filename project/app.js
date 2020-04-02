@@ -1,7 +1,7 @@
-// utils
-/**
- * @param {HTMLElement} selector 
- */
+// @ts-check
+let a = 10;
+a = 'hi'
+
 function $(selector) {
   return document.querySelector(selector);
 }
