@@ -1,0 +1,227 @@
+/* browser default stylesheet reset */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  font-family: 'Exo 2', sans-serif;
+}
+
+body,
+ol,
+p,
+h3,
+span,
+div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: 500;
+  font: inherit;
+  font-family: 'Exo 2', sans-serif;
+}
+ol {
+  list-style-type: none;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+}
+
+/* util stylesheets */
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+
+/* common stylesheets */
+body {
+  background: #4d4646;
+  color: white;
+}
+main {
+  padding: 0 1rem;
+}
+
+/* element specific */
+/* left panel */
+.left-panel {
+  width: 33%;
+}
+.total-board {
+  background-color: #5b5656;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+.total-board > p {
+  font-size: 1.75rem;
+  font-weight: 600;
+  padding: 1.2rem 0 0.5rem 0;
+}
+.confirmed-total {
+  color: #f54741;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+.country-ranks {
+  margin-top: 1rem;
+  background-color: #5b5656;
+  width: 100%;
+  height: 600px;
+  /* position: relative; */
+}
+.country-ranks > p {
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 1.25rem 0 0.75rem 0;
+}
+.rank-list {
+  height: 540px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.last-updated-time {
+  margin-top: 1rem;
+  background-color: #5b5656;
+  width: 100%;
+  height: 80px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.list-item {
+  height: 40px;
+  border-bottom: solid 1px rgb(155, 155, 155);
+  color: #f5eaea;
+  cursor: pointer;
+}
+.list-item:hover {
+  background-color: #e1f4f3;
+  color: #333333;
+}
+.cases {
+  color: #f54741;
+  font-size: 1.125rem;
+  font-weight: 750;
+  padding: 0 0.7rem;
+  width: 70px;
+}
+.country {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+/* right panel */
+.right-panel {
+  margin-left: 1rem;
+  width: 66%;
+}
+.deaths-container {
+  background-color: #5b5656;
+  width: 100%;
+  height: 440px;
+  text-align: center;
+}
+.summary-title {
+  padding: 0.5rem 0;
+  font-size: 1.25rem;
+}
+.total {
+  font-size: 3rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+.list-wrapper {
+  height: 340px;
+}
+.deaths-list {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.list-item-b {
+  height: 35px;
+  border-bottom: solid 1px rgb(155, 155, 155);
+  color: #f5eaea;
+}
+.list-item-b > .deaths {
+  padding: 0 0.4rem;
+  font-size: 1.125rem;
+  font-weight: 550;
+  width: 70px;
+  color: white;
+}
+.list-item-b > .recovered {
+  padding: 0 0.4rem;
+  font-size: 1.125rem;
+  font-weight: 550;
+  width: 70px;
+}
+.recovered-container {
+  margin-left: 1rem;
+  background-color: #5b5656;
+  width: 100%;
+  text-align: center;
+}
+.recovered {
+  color: #7fcd91;
+}
+.recovered-list {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+/* chart */
+.chart-container {
+  margin-top: 1rem;
+  height: 356px;
+}
+
+/* spinner */
+.spinner-wrapper {
+  height: 100%;
+}
+.ripple-spinner {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.ripple-spinner div {
+  position: absolute;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  opacity: 1;
+  animation: ripple-spinner 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.ripple-spinner div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+@keyframes ripple-spinner {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
