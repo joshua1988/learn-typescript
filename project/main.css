@@ -10,6 +10,7 @@ body {
 body,
 ol,
 p,
+h1,
 h3,
 span,
 div {
@@ -56,6 +57,12 @@ main {
 }
 
 /* element specific */
+header > h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.2rem 0;
+}
+
 /* left panel */
 .left-panel {
   width: 33%;
