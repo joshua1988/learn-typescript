@@ -3,8 +3,11 @@
     "outDir": "./dist",
     "allowJs": true,
     "target": "es5",
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "typeRoots": [ "./types", "./node_modules/@types"],
+    "lib": ["es2015", "dom", "dom.iterable"]
   },
   "include": ["./src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules", "types"]
 }
