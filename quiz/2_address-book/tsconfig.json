@@ -4,15 +4,11 @@
     "checkJs": true,
     "target": "es5",
     "lib": ["es2015", "dom", "dom.iterable"],
-<<<<<<< HEAD
-    "noImplicitAny": false
-=======
     "noImplicitAny": true,
     "strict": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "strictBindCallApply": true
->>>>>>> ec18a06... complete the types
   },
   "include": ["./src/**/*"]
 }
