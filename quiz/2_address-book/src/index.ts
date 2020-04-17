@@ -1,5 +1,5 @@
 interface PhoneNumberDictionary {
-  [phoneNumber: string]: {
+  [phone: string]: {
     num: number;
   };
 }
@@ -7,16 +7,18 @@ interface PhoneNumberDictionary {
 interface Contact {
   name: string;
   address: string;
-  phoneNumbers: PhoneNumberDictionary;
+  phones: PhoneNumberDictionary;
 }
 
 // api
-function fetchContacts(): Promise<Contact[]> {
-  const contacts: Contact[] = [
+// TODO: 아래 함수의 반환 타입을 지정해보세요.
+function fetchContacts() {
+  // TODO: 아래 변수의 타입을 지정해보세요.
+  const contacts = [
     {
       name: 'Tony',
       address: 'Malibu',
-      phoneNumbers: {
+      phones: {
         home: {
           num: 11122223333,
         },
@@ -28,7 +30,7 @@ function fetchContacts(): Promise<Contact[]> {
     {
       name: 'Banner',
       address: 'New York',
-      phoneNumbers: {
+      phones: {
         home: {
           num: 77788889999,
         },
@@ -37,7 +39,7 @@ function fetchContacts(): Promise<Contact[]> {
     {
       name: '마동석',
       address: '서울시 강남구',
-      phoneNumbers: {
+      phones: {
         home: {
           num: 213423452,
         },
@@ -54,6 +56,7 @@ function fetchContacts(): Promise<Contact[]> {
 
 // main
 class AddressBook {
+  // TODO: 아래 변수의 타입을 지정해보세요.
   contacts = [];
 
   constructor() {
@@ -66,6 +69,7 @@ class AddressBook {
     });
   }
 
+  /* TODO: 아래 함수들의 파라미터 타입과 반환 타입을 지정해보세요 */
   findContactByName(name) {
     return this.contacts.filter(contact => contact.name === name);
   }
@@ -74,8 +78,10 @@ class AddressBook {
     return this.contacts.filter(contact => contact.address === address);
   }
 
-  findContactByPhone(phoneNumber, type) {
-    return this.contacts.filter(contact => contact.phone[type] === phoneNumber);
+  findContactByPhone(phoneNumber, phoneType: string) {
+    return this.contacts.filter(
+      contact => contact.phones[phoneType].num === phoneNumber
+    );
   }
 
   addContact(contact) {
@@ -89,6 +95,7 @@ class AddressBook {
   displayListByAddress() {
     return this.contacts.map(contact => contact.address);
   }
+  /* ------------------------------------------------ */
 }
 
 new AddressBook();
