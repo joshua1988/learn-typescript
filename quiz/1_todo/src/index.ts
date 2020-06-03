@@ -25,8 +25,8 @@ function deleteTodo(index) {
 }
 
 function completeTodo(index, todo) {
-  const completed = todo;
-  todoItems.splice(index, 1, completed);
+  todo.done = true;
+  todoItems.splice(index, 1, todo);
 }
 
 // business logic
