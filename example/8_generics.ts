@@ -39,14 +39,15 @@ interface ShoppingItems {
   stock: number;
 }
 function getAllowedOptions<T extends keyof ShoppingItems>(option: T): T {
-  if (option === 'name' || option === 'address') {
-    console.log('option type is string');
-    return option;
-  }
-  if (option === 'price' || option === 'stock') {
-    console.log('option type is number');
-    return option;
-  }
+  return option;
+  // if (option === 'name' || option === 'address') {
+  //   console.log('option type is string');
+  //   return option;
+  // }
+  // if (option === 'price' || option === 'stock') {
+  //   console.log('option type is number');
+  //   return option;
+  // }
 }
 getAllowedOptions('nothing');
 // const a = getAllowedOptions('name');
