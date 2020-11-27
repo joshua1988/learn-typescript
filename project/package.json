@@ -10,7 +10,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.21.0",
+    "chart.js": "^2.9.4"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.7",
     "@babel/preset-env": "^7.12.7",

@@ -74,7 +74,7 @@ node_modules
   "eslint.validate": [
       "javascript",
       "typescript"
-  ],
+  ]
 }
 ```
 
