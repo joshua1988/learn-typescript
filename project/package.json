@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -18,11 +18,16 @@
     "@babel/core": "^7.12.7",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-typescript": "^7.12.7",
+    "@types/chart.js": "^2.9.30",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.8.1",
+    "clean-webpack-plugin": "^3.0.0",
     "eslint": "^7.14.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.2.0",
-    "typescript": "^4.1.2"
+    "ts-loader": "^8.0.14",
+    "typescript": "^4.1.2",
+    "webpack": "^5.18.0",
+    "webpack-cli": "^4.4.0"
   }
 }
