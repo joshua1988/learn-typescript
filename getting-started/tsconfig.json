@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "allowJs": true, // js 파일을 허용하는 옵션
+        "checkJs": true, // js파일에서 @ts-check 이것을 적용하는 옵션
+        "noImplicitAny": true, // 타입에 최소 any 라도 지정해야 하는 옵션
+        // implicit - 암시된, 내포된
+    }
+}
+/* 
+tsc 명령 실행시 여기 설정한 옵션에 맞춰서 js 파일로 컴파일을 실행하게 된다.
+
+TS 공홈 > tools > TSConfig Reference 에서 여러 옵션들에 대한 소개와 설명 확인 가능
+*/
