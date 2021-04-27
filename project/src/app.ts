@@ -8,8 +8,9 @@ import {
 } from './covid';
 
 // utils
-function $(selector: string) {
-  return document.querySelector(selector);
+function $<T extends HTMLElement>(selector: string) {
+  const element = document.querySelector(selector);
+	return element as T;
 }
 
 function getUnixTimestamp(date: Date | string) {
@@ -17,13 +18,13 @@ function getUnixTimestamp(date: Date | string) {
 }
 
 // DOM
-const confirmedTotal = $('.confirmed-total') as HTMLSpanElement;
-const deathsTotal = $('.deaths') as HTMLParagraphElement;
-const recoveredTotal = $('.recovered') as HTMLParagraphElement;
-const lastUpdatedTime = $('.last-updated-time') as HTMLParagraphElement;
-const rankList = $('.rank-list') as HTMLOListElement;
-const deathsList = $('.deaths-list') as HTMLOListElement;
-const recoveredList = $('.recovered-list') as HTMLOListElement;
+const confirmedTotal = $('.confirmed-total') 
+const deathsTotal = $('.deaths') 
+const recoveredTotal = $('.recovered') 
+const lastUpdatedTime = $('.last-updated-time') 
+const rankList = $('.rank-list') ;
+const deathsList = $('.deaths-list') ;
+const recoveredList = $('.recovered-list') ;
 const deathSpinner = createSpinnerElement('deaths-spinner');
 const recoveredSpinner = createSpinnerElement('recovered-spinner');
 
