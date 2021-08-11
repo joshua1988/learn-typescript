@@ -168,8 +168,8 @@ async function setupData() {
 
 function renderChart(data, labels) {
   var ctx = $('#lineChart').getContext('2d');
-  Chart.defaults.global.defaultFontColor = '#f5eaea';
-  Chart.defaults.global.defaultFontFamily = 'Exo 2';
+  Chart.defaults.color = '#f5eaea';
+  Chart.defaults.font.family = 'Exo 2';
   new Chart(ctx, {
     type: 'line',
     data: {
