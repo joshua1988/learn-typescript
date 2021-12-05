@@ -9,17 +9,46 @@ var address = document.querySelector('#address');
 // user data
 var user = {};
 
+/**
+ * @typedef {object} Address
+ * @property {string} street
+ * @property {string} city
+ */
+
+/**
+ * @typedef {object} User
+ * @property {string} name
+ * @property {string} email
+ * @property {Address} address
+ */
+
+/**
+ *
+ * @returns {Promise<User>}
+ */
+
+function fetchUser() {
+    return axios.get(url);
+}
+
+fetchUser().then(function (response) {
+    response.address.street;
+});
+
 function startApp() {
-  axios
-    .get(url)
-    .then(function (response) {
-      console.log(response);
-      user = response.data;
-      // TODO: 이름, 이메일, 주소 표시하기
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    fetchUser()
+        .then(function (response) {
+            // console.log(response);
+            user = response.data;
+            // TODO: 이름, 이메일, 주소 표시하기
+            console.log(response.data);
+            username.innerText = user.name;
+            email.innerText = user.email;
+            address.innerText = user.address.street;
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 }
 
 startApp();
