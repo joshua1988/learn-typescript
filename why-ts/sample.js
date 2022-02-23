@@ -15,4 +15,4 @@ function sum1(a, b) {
     return a + b;
 }
 
-sum1(10, '20');
+sum1(10, 20);
