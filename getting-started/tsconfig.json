@@ -1,0 +1,10 @@
+// compilerOptions : 타입스크립트가 프로젝트를 변환할 때 프로젝트를 어떻게 이해하면 되는 지에 대한 명시
+// checkJs : @ts-check와 같은 역할
+// noImplicitAny : 모든 타입에 대해 최소한 Any(기본 타입)을 넣어야 함
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noImplicitAny": true
+  }
+}
