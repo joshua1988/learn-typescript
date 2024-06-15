@@ -38,7 +38,7 @@ let isRecoveredLoading = false;
 
 // api
 function fetchCovidSummary() {
-  const url = 'https://api.covid19api.com/summary';
+  const url = 'https://ts-covid-api.vercel.app/api/summary';
   return axios.get(url);
 }
 
