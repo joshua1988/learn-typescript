@@ -42,9 +42,14 @@ function fetchCovidSummary() {
   return axios.get(url);
 }
 
+/**
+ * 
+ * @param {'spain' | 'switzerland'} countryCode 스페인과 스위스만 지원됩니다.
+ * @returns 
+ */
 function fetchCountryInfo(countryCode, status) {
   // params: confirmed, recovered, deaths
-  const url = `https://api.covid19api.com/country/${countryCode}/status/${status}`;
+  const url = `https://ts-covid-api.vercel.app/api/country/${countryCode}`;
   return axios.get(url);
 }
 
@@ -77,20 +82,28 @@ async function handleListClick(event) {
   clearRecoveredList();
   startLoadingAnimation();
   isDeathLoading = true;
-  const { data: deathResponse } = await fetchCountryInfo(selectedId, 'deaths');
-  const { data: recoveredResponse } = await fetchCountryInfo(
-    selectedId,
-    'recovered',
-  );
+
+  console.log({selectedId});
+
+  /**
+   * NOTE: 코로나 종식으로 오픈 API 지원이 끝나서 death, recover 데이터는 지원되지 않습니다.
+   *       그리고 국가별 상세 정보는 "스페인"과 "스위스"만 지원됩니다.
+   */
+  // const { data: deathResponse } = await fetchCountryInfo(selectedId, 'deaths');
+  // const { data: recoveredResponse } = await fetchCountryInfo(
+  //   selectedId,
+  //   'recovered',
+  // );
   const { data: confirmedResponse } = await fetchCountryInfo(
     selectedId,
     'confirmed',
   );
   endLoadingAnimation();
-  setDeathsList(deathResponse);
-  setTotalDeathsByCountry(deathResponse);
-  setRecoveredList(recoveredResponse);
-  setTotalRecoveredByCountry(recoveredResponse);
+  // NOTE: 코로나 종식으로 오픈 API 지원이 끝나서 death, recover 데이터는 지원되지 않습니다.
+  // setDeathsList(deathResponse);
+  // setTotalDeathsByCountry(deathResponse);
+  // setRecoveredList(recoveredResponse);
+  // setTotalRecoveredByCountry(recoveredResponse);
   setChartData(confirmedResponse);
   isDeathLoading = false;
 }
@@ -168,8 +181,6 @@ async function setupData() {
 
 function renderChart(data, labels) {
   var ctx = $('#lineChart').getContext('2d');
-  Chart.defaults.color = '#f5eaea';
-  Chart.defaults.font.family = 'Exo 2';
   new Chart(ctx, {
     type: 'line',
     data: {
